@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 02/12/2017 17:00:56 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="br.com.agenda.model.Contato" table="contato" catalog="agenda" optimistic-lock="version">
+        <id name="idContato" type="java.lang.Integer">
+            <column name="idContato" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="caderno" class="br.com.agenda.model.Caderno" fetch="select">
+            <column name="fk_id_Caderno" not-null="true" />
+        </many-to-one>
+        <property name="nome" type="string">
+            <column name="nome" length="81" not-null="true" />
+        </property>
+        <property name="telefoneFixo" type="string">
+            <column name="telefoneFixo" length="14" />
+        </property>
+        <property name="telefoneCelular" type="string">
+            <column name="telefoneCelular" length="15" />
+        </property>
+        <property name="endereco" type="string">
+            <column name="endereco" length="81" />
+        </property>
+        <property name="cidade" type="string">
+            <column name="cidade" length="81" />
+        </property>
+        <property name="dataNacimento" type="date">
+            <column name="dataNacimento" length="10" />
+        </property>
+        <property name="email" type="string">
+            <column name="email" length="81" />
+        </property>
+        <property name="observacao" type="string">
+            <column name="observacao" length="511" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,32 @@
+CREATE TABLE Caderno (
+    idCaderno integer      AUTO_INCREMENT
+    			PRIMARY KEY
+                           NOT NULL,
+                           
+    nome      VARCHAR (81) NOT NULL
+                           UNIQUE
+);
+
+INSERT INTO `caderno`(`nome`) VALUES ("Empresa");
+INSERT INTO `caderno`(`nome`) VALUES ("Faculdade");
+
+
+
+
+
+CREATE TABLE Contato (
+    idContato     integer      AUTO_INCREMENT                
+    				PRIMARY KEY
+                                  NOT NULL,
+    fk_id_Caderno   integer    NOT NULL, 
+    foreign key(fk_id_Caderno) references caderno(idCaderno),
+    
+    nome            VARCHAR (81)     NOT NULL,
+    telefoneFixo    VARCHAR (14),
+    telefoneCelular VARCHAR (15),
+    endereco         VARCHAR (81),
+    cidade	    VARCHAR (81),
+    dataNacimento   DATE,
+    email  			VARCHAR (81),
+    observacao       VARCHAR (511) 
+);
