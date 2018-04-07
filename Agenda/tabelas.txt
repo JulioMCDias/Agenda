@@ -20,6 +20,7 @@ CREATE TABLE Contato (
                                   NOT NULL,
     fk_id_Caderno   integer    NOT NULL, 
     foreign key(fk_id_Caderno) references caderno(idCaderno),
+
     
     nome            VARCHAR (81)     NOT NULL,
     telefoneFixo    VARCHAR (14),
