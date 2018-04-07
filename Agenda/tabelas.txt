@@ -11,9 +11,6 @@ INSERT INTO `caderno`(`nome`) VALUES ("Empresa");
 INSERT INTO `caderno`(`nome`) VALUES ("Faculdade");
 
 
-
-
-
 CREATE TABLE Contato (
     idContato     integer      AUTO_INCREMENT                
     				PRIMARY KEY
